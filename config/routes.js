@@ -13,6 +13,7 @@ module.exports = (app) => {
 
   app.route("/description").post(app.api.receita.sendToCLP);
 
-  app.route("/report").post(app.api.report.get);
-
+  app.route("/historic/:dateTimeStart/:dateTimeEnd").get(app.api.historic.get);
+  
+  app.route("/historic").post(app.api.historic.pdf);
 };
